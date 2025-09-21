@@ -102,24 +102,24 @@ export const FeaturesGrid = () => {
           {features.map((feature, index) => (
             <Card 
               key={feature.title}
-              className="card-hover group cursor-pointer animate-scale-in"
+              className="card-hover group cursor-pointer animate-scale-in bg-card/98 backdrop-blur-md border-border/60 shadow-xl"
               style={{animationDelay: `${index * 0.1}s`}}
             >
               <CardHeader className="text-center">
-                <div className={`p-4 rounded-2xl bg-gradient-to-br ${feature.color} mx-auto mb-4 w-fit group-hover:scale-110 transition-transform`}>
+                <div className={`p-4 rounded-2xl bg-gradient-to-br ${feature.color} mx-auto mb-4 w-fit group-hover:scale-125 transition-all duration-300 shadow-lg`}>
                   <feature.icon className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-foreground">
+                <CardTitle className="text-xl font-semibold text-foreground drop-shadow-sm">
                   {feature.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-6 leading-relaxed font-medium">
                   {feature.description}
                 </p>
                 <Button 
                   variant="outline" 
-                  className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  className="group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   Learn More
                 </Button>
@@ -130,22 +130,22 @@ export const FeaturesGrid = () => {
 
         {/* Additional Info Cards */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="dashboard-card text-center">
+          <div className="dashboard-card text-center hover:scale-105 transition-all duration-300">
             <Lock className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-3">Enterprise Security</h3>
-            <p className="text-muted-foreground">SSL encryption, RBAC, GDPR compliance with complete audit trails</p>
+            <h3 className="text-xl font-semibold mb-3 text-foreground">Enterprise Security</h3>
+            <p className="text-muted-foreground font-medium">SSL encryption, RBAC, GDPR compliance with complete audit trails</p>
           </div>
           
-          <div className="dashboard-card text-center">
+          <div className="dashboard-card text-center hover:scale-105 transition-all duration-300">
             <Headphones className="h-12 w-12 text-success mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-3">24/7 Support</h3>
-            <p className="text-muted-foreground">SMS alerts for low connectivity regions with offline support</p>
+            <h3 className="text-xl font-semibold mb-3 text-foreground">24/7 Support</h3>
+            <p className="text-muted-foreground font-medium">SMS alerts for low connectivity regions with offline support</p>
           </div>
           
-          <div className="dashboard-card text-center">
+          <div className="dashboard-card text-center hover:scale-105 transition-all duration-300">
             <Users className="h-12 w-12 text-accent mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-3">Faculty Tools</h3>
-            <p className="text-muted-foreground">Digital training, analytics for pedagogy and management efficiency</p>
+            <h3 className="text-xl font-semibold mb-3 text-foreground">Faculty Tools</h3>
+            <p className="text-muted-foreground font-medium">Digital training, analytics for pedagogy and management efficiency</p>
           </div>
         </div>
       </div>

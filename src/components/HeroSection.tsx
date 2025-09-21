@@ -15,30 +15,30 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0">
+      {/* Fixed Background Video */}
+      <div className="fixed inset-0 z-0">
         <iframe
           className="w-full h-full object-cover scale-110"
-          src="https://www.youtube.com/embed/IrMBIgoy7Ro?autoplay=1&mute=1&loop=1&playlist=IrMBIgoy7Ro&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+          src="https://www.youtube.com/embed/IrMBIgoy7Ro?autoplay=1&mute=1&loop=1&playlist=IrMBIgoy7Ro&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&start=37"
           title="Background Video"
           frameBorder="0"
           allow="autoplay; encrypted-media"
           allowFullScreen
         />
-        <div className="absolute inset-0 bg-primary/20 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-primary/30 to-accent/40 backdrop-blur-[2px]"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-up">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
             Secure Educational
-            <span className="block bg-gradient-to-r from-accent to-primary-glow bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-accent to-primary-glow bg-clip-text text-transparent drop-shadow-lg">
               Excellence Platform
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
             Blockchain-verified achievements, real-time analytics, safe reporting, 
             and comprehensive student development - all in one secure platform.
           </p>
@@ -47,7 +47,7 @@ export const HeroSection = () => {
             <Button 
               asChild
               size="lg" 
-              className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4 rounded-xl shadow-lg professional-button mouse-hover"
+              className="bg-white/95 text-primary hover:bg-white hover:scale-105 text-lg px-8 py-4 rounded-xl shadow-2xl professional-button mouse-hover backdrop-blur-sm border border-white/20"
             >
               <Link to="/dashboard">
                 <Shield className="mr-2 h-5 w-5" />
@@ -58,7 +58,7 @@ export const HeroSection = () => {
               asChild
               size="lg" 
               variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4 rounded-xl professional-button"
+              className="border-white/40 bg-white/10 text-white hover:bg-white/20 hover:scale-105 text-lg px-8 py-4 rounded-xl professional-button backdrop-blur-md shadow-xl"
             >
               <Link to="/safety">
                 <Play className="mr-2 h-5 w-5" />
@@ -69,42 +69,44 @@ export const HeroSection = () => {
 
           {/* Theme Toggle */}
           <div className="flex justify-center mb-16">
-            <ThemeToggle />
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-2 border border-white/20 shadow-xl">
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Key Features Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="dashboard-card text-center animate-scale-in">
-              <div className="p-3 rounded-full bg-accent/20 mx-auto mb-4 w-fit">
-                <Award className="h-6 w-6 text-accent" />
+            <div className="glass-card text-center animate-scale-in hover:scale-105 transition-all duration-300">
+              <div className="p-3 rounded-full bg-accent/30 backdrop-blur-sm mx-auto mb-4 w-fit border border-accent/40">
+                <Award className="h-6 w-6 text-white" />
               </div>
-              <h3 className="font-semibold text-white mb-2">Verified Achievements</h3>
-              <p className="text-white/70 text-sm">Blockchain-secured certificates and portfolios</p>
+              <h3 className="font-semibold text-white mb-2 drop-shadow-md">Verified Achievements</h3>
+              <p className="text-white/90 text-sm drop-shadow-sm">Blockchain-secured certificates and portfolios</p>
             </div>
             
-            <div className="dashboard-card text-center animate-scale-in" style={{animationDelay: '0.2s'}}>
-              <div className="p-3 rounded-full bg-success/20 mx-auto mb-4 w-fit">
-                <Shield className="h-6 w-6 text-success" />
+            <div className="glass-card text-center animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.2s'}}>
+              <div className="p-3 rounded-full bg-success/30 backdrop-blur-sm mx-auto mb-4 w-fit border border-success/40">
+                <Shield className="h-6 w-6 text-white" />
               </div>
-              <h3 className="font-semibold text-white mb-2">Safe Reporting</h3>
-              <p className="text-white/70 text-sm">Anonymous, secure incident reporting system</p>
+              <h3 className="font-semibold text-white mb-2 drop-shadow-md">Safe Reporting</h3>
+              <p className="text-white/90 text-sm drop-shadow-sm">Anonymous, secure incident reporting system</p>
             </div>
             
-            <div className="dashboard-card text-center animate-scale-in" style={{animationDelay: '0.4s'}}>
-              <div className="p-3 rounded-full bg-warning/20 mx-auto mb-4 w-fit">
-                <Users className="h-6 w-6 text-warning" />
+            <div className="glass-card text-center animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.4s'}}>
+              <div className="p-3 rounded-full bg-warning/30 backdrop-blur-sm mx-auto mb-4 w-fit border border-warning/40">
+                <Users className="h-6 w-6 text-white" />
               </div>
-              <h3 className="font-semibold text-white mb-2">Smart Mentorship</h3>
-              <p className="text-white/70 text-sm">AI-powered career guidance and mentorship</p>
+              <h3 className="font-semibold text-white mb-2 drop-shadow-md">Smart Mentorship</h3>
+              <p className="text-white/90 text-sm drop-shadow-sm">AI-powered career guidance and mentorship</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+        <div className="w-6 h-10 border-2 border-white/70 rounded-full flex justify-center backdrop-blur-sm bg-white/10">
+          <div className="w-1 h-3 bg-white/90 rounded-full mt-2"></div>
         </div>
       </div>
     </section>

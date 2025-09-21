@@ -30,25 +30,25 @@ const stats = [
 
 export const StatsSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-accent/5 to-success/5">
+    <section className="py-20 bg-gradient-to-br from-primary/8 via-accent/8 to-success/8 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div 
               key={stat.label}
-              className="text-center animate-fade-up"
+              className="text-center animate-fade-up hover:scale-110 transition-all duration-300"
               style={{animationDelay: `${index * 0.2}s`}}
             >
-              <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 mx-auto mb-4 w-fit">
+              <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 mx-auto mb-4 w-fit shadow-lg backdrop-blur-sm border border-primary/20">
                 <stat.icon className="h-8 w-8 text-primary" />
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2 drop-shadow-sm">
                 {stat.number}
               </div>
-              <div className="text-xl font-semibold text-foreground mb-1">
+              <div className="text-xl font-semibold text-foreground mb-1 drop-shadow-sm">
                 {stat.label}
               </div>
-              <div className="text-muted-foreground text-sm">
+              <div className="text-muted-foreground text-sm font-medium">
                 {stat.description}
               </div>
             </div>

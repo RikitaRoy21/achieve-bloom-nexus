@@ -57,7 +57,7 @@ export const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors mouse-hover">
+            <Link to="/" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-all duration-300 mouse-hover font-medium">
               <Home className="h-4 w-4" />
               <span>Home</span>
             </Link>
@@ -68,10 +68,10 @@ export const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`flex items-center space-x-2 transition-colors mouse-hover ${
+                  className={`flex items-center space-x-2 transition-all duration-300 mouse-hover font-medium ${
                     isActive 
-                      ? 'text-primary font-medium' 
-                      : 'text-muted-foreground hover:text-primary'
+                      ? 'text-primary font-semibold drop-shadow-sm' 
+                      : 'text-muted-foreground hover:text-primary hover:scale-105'
                   }`}
                 >
                   <item.icon className="h-4 w-4" />
@@ -80,11 +80,11 @@ export const Navigation = () => {
               );
             })}
             <div className="flex items-center space-x-3">
-              <Button variant="outline" size="sm" className="professional-button">
+              <Button variant="outline" size="sm" className="professional-button hover:scale-110 shadow-md">
                 <Globe className="h-4 w-4 mr-2" />
                 हिंदी
               </Button>
-              <Button variant="default" className="hero-gradient professional-button">
+              <Button variant="default" className="hero-gradient professional-button hover:scale-110 shadow-lg">
                 Login
               </Button>
             </div>
@@ -112,10 +112,10 @@ export const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
+                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 hover:scale-105 ${
                     isActive 
-                      ? 'bg-primary/10 text-primary font-medium' 
-                      : 'hover:bg-muted/50'
+                      ? 'bg-primary/15 text-primary font-semibold shadow-md' 
+                      : 'hover:bg-muted/60 hover:shadow-md'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -125,11 +125,11 @@ export const Navigation = () => {
               );
             })}
             <div className="pt-3 border-t border-border space-y-3">
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full hover:scale-105 transition-all duration-300">
                 <Globe className="h-4 w-4 mr-2" />
                 Switch Language
               </Button>
-              <Button className="w-full hero-gradient">
+              <Button className="w-full hero-gradient hover:scale-105 transition-all duration-300">
                 Login to Platform
               </Button>
             </div>
