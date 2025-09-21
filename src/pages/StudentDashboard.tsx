@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
+import { UploadDialog } from '@/components/UploadDialog';
 import { 
   User, 
   Award, 
@@ -16,6 +17,37 @@ import {
 } from 'lucide-react';
 
 const StudentDashboard = () => {
+  const [achievements, setAchievements] = useState([
+    { id: 1, title: 'Best Paper Award - IEEE Conference', status: 'Verified', date: '2024-01-15', type: 'Academic' },
+    { id: 2, title: 'Summer Internship - Microsoft', status: 'Pending', date: '2024-01-10', type: 'Professional' },
+    { id: 3, title: 'Cultural Fest Winner - Dance Competition', status: 'Verified', date: '2024-01-08', type: 'Cultural' },
+  ]);
+
+  const [stats, setStats] = useState({
+    totalAchievements: 24,
+    verifiedAchievements: 21,
+    pendingAchievements: 3,
+    attendance: 94,
+    cgpa: 8.7
+  });
+
+  const handleNewAchievement = (newAchievement: any) => {
+    setAchievements(prev => [newAchievement, ...prev]);
+    setStats(prev => ({
+      ...prev,
+      totalAchievements: prev.totalAchievements + 1,
+      pendingAchievements: prev.pendingAchievements + 1
+    }));
+  };
+
+  const verifiedCount = achievements.filter(a => a.status === 'Verified').length;
+  const pendingCount = achievements.filter(a => a.status === 'Pending').length;
+
+  // Calculate performance based on achievements
+  const academicPerformance = achievements.filter(a => a.type === 'Academic').length * 5 + 70;
+  const technicalSkills = achievements.filter(a => a.type === 'Technical' || a.type === 'Professional').length * 4 + 75;
+  const culturalSkills = achievements.filter(a => a.type === 'Cultural').length * 6 + 65;
+
   return (
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-7xl mx-auto">
@@ -33,10 +65,10 @@ const StudentDashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="flex items-center justify-between">
-                <div className="text-2xl font-bold text-foreground">24</div>
+                <div className="text-2xl font-bold text-foreground">{achievements.length}</div>
                 <Award className="h-6 w-6 text-primary" />
               </div>
-              <p className="text-xs text-success mt-1">+3 this month</p>
+              <p className="text-xs text-success mt-1">+{pendingCount} pending</p>
             </CardContent>
           </Card>
 
@@ -72,7 +104,7 @@ const StudentDashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="flex items-center justify-between">
-                <div className="text-2xl font-bold text-foreground">3</div>
+                <div className="text-2xl font-bold text-foreground">{pendingCount}</div>
                 <Bell className="h-6 w-6 text-warning" />
               </div>
               <p className="text-xs text-muted-foreground mt-1">Awaiting faculty review</p>
@@ -92,11 +124,7 @@ const StudentDashboard = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {[
-                  { title: 'Best Paper Award - IEEE Conference', status: 'Verified', date: '2024-01-15', type: 'Academic' },
-                  { title: 'Summer Internship - Microsoft', status: 'Pending', date: '2024-01-10', type: 'Professional' },
-                  { title: 'Cultural Fest Winner - Dance Competition', status: 'Verified', date: '2024-01-08', type: 'Cultural' },
-                ].map((achievement, index) => (
+                {achievements.slice(0, 3).map((achievement, index) => (
                   <div key={index} className="flex items-center justify-between p-4 border border-border rounded-lg">
                     <div className="flex items-center space-x-3">
                       <div className={`p-2 rounded-full ${
@@ -129,10 +157,7 @@ const StudentDashboard = () => {
                   </div>
                 ))}
                 
-                <Button className="w-full hero-gradient">
-                  <Award className="mr-2 h-4 w-4" />
-                  Add New Achievement
-                </Button>
+                <UploadDialog onUpload={handleNewAchievement} />
               </CardContent>
             </Card>
 
@@ -149,30 +174,54 @@ const StudentDashboard = () => {
                   <div>
                     <h4 className="font-medium mb-3">Academic Performance</h4>
                     <div className="space-y-3">
-                      {['Mathematics', 'Physics', 'Computer Science', 'English'].map((subject, index) => (
-                        <div key={subject}>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span>{subject}</span>
-                            <span>{90 - index * 5}%</span>
-                          </div>
-                          <Progress value={90 - index * 5} />
+                      <div>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span>Academic Excellence</span>
+                          <span>{Math.min(academicPerformance, 100)}%</span>
                         </div>
-                      ))}
+                        <Progress value={Math.min(academicPerformance, 100)} />
+                      </div>
+                      <div>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span>Technical Skills</span>
+                          <span>{Math.min(technicalSkills, 100)}%</span>
+                        </div>
+                        <Progress value={Math.min(technicalSkills, 100)} />
+                      </div>
+                      <div>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span>Cultural Activities</span>
+                          <span>{Math.min(culturalSkills, 100)}%</span>
+                        </div>
+                        <Progress value={Math.min(culturalSkills, 100)} />
+                      </div>
                     </div>
                   </div>
                   
                   <div>
                     <h4 className="font-medium mb-3">Skill Development</h4>
                     <div className="space-y-3">
-                      {['Leadership', 'Communication', 'Technical Skills', 'Teamwork'].map((skill, index) => (
-                        <div key={skill}>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span>{skill}</span>
-                            <span>{85 - index * 3}%</span>
-                          </div>
-                          <Progress value={85 - index * 3} className="bg-accent/20" />
+                      <div>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span>Total Verified</span>
+                          <span>{verifiedCount}</span>
                         </div>
-                      ))}
+                        <Progress value={(verifiedCount / achievements.length) * 100} className="bg-success/20" />
+                      </div>
+                      <div>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span>Pending Review</span>
+                          <span>{pendingCount}</span>
+                        </div>
+                        <Progress value={(pendingCount / achievements.length) * 100} className="bg-warning/20" />
+                      </div>
+                      <div>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span>Profile Completion</span>
+                          <span>{Math.round((verifiedCount / (verifiedCount + pendingCount)) * 100)}%</span>
+                        </div>
+                        <Progress value={(verifiedCount / (verifiedCount + pendingCount)) * 100} className="bg-accent/20" />
+                      </div>
                     </div>
                   </div>
                 </div>

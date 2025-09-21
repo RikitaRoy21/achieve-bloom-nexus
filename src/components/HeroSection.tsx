@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Play, Shield, Award, Users } from 'lucide-react';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export const HeroSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -24,7 +25,7 @@ export const HeroSection = () => {
           allow="autoplay; encrypted-media"
           allowFullScreen
         />
-        <div className="absolute inset-0 bg-primary/70 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-primary/20 backdrop-blur-sm"></div>
       </div>
 
       {/* Content */}
@@ -42,11 +43,11 @@ export const HeroSection = () => {
             and comprehensive student development - all in one secure platform.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Button 
               asChild
               size="lg" 
-              className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4 rounded-xl shadow-lg"
+              className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4 rounded-xl shadow-lg professional-button mouse-hover"
             >
               <Link to="/dashboard">
                 <Shield className="mr-2 h-5 w-5" />
@@ -57,13 +58,18 @@ export const HeroSection = () => {
               asChild
               size="lg" 
               variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4 rounded-xl"
+              className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4 rounded-xl professional-button"
             >
               <Link to="/safety">
                 <Play className="mr-2 h-5 w-5" />
                 Safe Space
               </Link>
             </Button>
+          </div>
+
+          {/* Theme Toggle */}
+          <div className="flex justify-center mb-16">
+            <ThemeToggle />
           </div>
 
           {/* Key Features Cards */}
