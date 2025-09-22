@@ -25,7 +25,7 @@ export const HeroSection = () => {
           allow="autoplay; encrypted-media"
           allowFullScreen
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-primary/30 to-accent/40 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-primary/10 to-accent/15 backdrop-blur-[1px]"></div>
       </div>
 
       {/* Content */}
@@ -69,7 +69,7 @@ export const HeroSection = () => {
 
           {/* Theme Toggle */}
           <div className="flex justify-center mb-16">
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-2 border border-white/20 shadow-xl">
+            <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-3 border border-white/10 shadow-2xl">
               <ThemeToggle />
             </div>
           </div>

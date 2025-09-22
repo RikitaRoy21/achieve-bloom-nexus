@@ -15,7 +15,7 @@ export function ThemeToggle() {
       variant="outline"
       size="sm"
       onClick={toggleTheme}
-      className="professional-button mouse-hover"
+      className="professional-button bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30 backdrop-blur-md"
     >
       {theme === 'light' ? (
         <>

@@ -163,8 +163,9 @@
   }
 
   .achievement-card {
-    @apply bg-card/98 backdrop-blur-md border border-border/60 rounded-xl p-6 card-hover;
+    @apply bg-card backdrop-blur-md border border-border/60 rounded-xl p-6 card-hover;
     box-shadow: var(--shadow-glass);
+    background: hsl(var(--card) / 0.98);
   }
 
   .safety-button {
@@ -174,8 +175,9 @@
   }
 
   .dashboard-card {
-    @apply bg-card/98 backdrop-blur-lg border border-border/50 rounded-2xl p-6;
+    @apply bg-card backdrop-blur-lg border border-border/50 rounded-2xl p-6;
     box-shadow: var(--shadow-glass);
+    background: hsl(var(--card) / 0.98);
     transition: var(--transition-glass);
   }
 
@@ -186,7 +188,8 @@
   }
 
   .nav-glass {
-    @apply bg-card/90 backdrop-blur-xl border-b border-border/40;
+    @apply backdrop-blur-xl border-b border-border/40;
+    background: hsl(var(--card) / 0.9);
     box-shadow: var(--shadow-soft);
   }
 

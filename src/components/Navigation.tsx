@@ -33,13 +33,13 @@ export const Navigation = () => {
     <nav className="nav-glass sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             {!isHomePage && (
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => navigate(-1)}
-                className="professional-button mouse-hover"
+                className="professional-button mouse-hover text-muted-foreground hover:text-primary"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back
@@ -56,8 +56,8 @@ export const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-all duration-300 mouse-hover font-medium">
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105">
               <Home className="h-4 w-4" />
               <span>Home</span>
             </Link>
@@ -68,10 +68,10 @@ export const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`flex items-center space-x-2 transition-all duration-300 mouse-hover font-medium ${
+                  className={`flex items-center space-x-2 transition-all duration-300 font-medium hover:scale-105 ${
                     isActive 
-                      ? 'text-primary font-semibold drop-shadow-sm' 
-                      : 'text-muted-foreground hover:text-primary hover:scale-105'
+                      ? 'text-primary font-semibold' 
+                      : 'text-muted-foreground hover:text-primary'
                   }`}
                 >
                   <item.icon className="h-4 w-4" />
@@ -79,12 +79,12 @@ export const Navigation = () => {
                 </Link>
               );
             })}
-            <div className="flex items-center space-x-3">
-              <Button variant="outline" size="sm" className="professional-button hover:scale-110 shadow-md">
+            <div className="flex items-center space-x-4 ml-6">
+              <Button variant="outline" size="sm" className="professional-button">
                 <Globe className="h-4 w-4 mr-2" />
                 हिंदी
               </Button>
-              <Button variant="default" className="hero-gradient professional-button hover:scale-110 shadow-lg">
+              <Button className="hero-gradient professional-button text-white">
                 Login
               </Button>
             </div>
