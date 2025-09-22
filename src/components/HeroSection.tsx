@@ -76,28 +76,28 @@ export const HeroSection = () => {
 
           {/* Key Features Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="glass-card text-center animate-scale-in hover:scale-105 transition-all duration-300">
-              <div className="p-3 rounded-full bg-accent/30 backdrop-blur-sm mx-auto mb-4 w-fit border border-accent/40">
-                <Award className="h-6 w-6 text-white" />
+            <div className="bg-white/25 backdrop-blur-lg border border-white/40 rounded-2xl p-6 text-center animate-scale-in hover:scale-105 transition-all duration-300 shadow-2xl">
+              <div className="p-3 rounded-full bg-accent/60 backdrop-blur-sm mx-auto mb-4 w-fit border border-accent/80 shadow-lg">
+                <Award className="h-6 w-6 text-white drop-shadow-lg" />
               </div>
-              <h3 className="font-semibold text-white mb-2 drop-shadow-md filter brightness-110">Verified Achievements</h3>
-              <p className="text-white text-sm drop-shadow-sm filter brightness-105">Blockchain-secured certificates and portfolios</p>
+              <h3 className="font-bold text-white mb-2 text-lg drop-shadow-2xl">Verified Achievements</h3>
+              <p className="text-white font-semibold text-sm drop-shadow-xl">Blockchain-secured certificates and portfolios</p>
             </div>
             
-            <div className="glass-card text-center animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.2s'}}>
-              <div className="p-3 rounded-full bg-success/30 backdrop-blur-sm mx-auto mb-4 w-fit border border-success/40">
-                <Shield className="h-6 w-6 text-white" />
+            <div className="bg-white/25 backdrop-blur-lg border border-white/40 rounded-2xl p-6 text-center animate-scale-in hover:scale-105 transition-all duration-300 shadow-2xl" style={{animationDelay: '0.2s'}}>
+              <div className="p-3 rounded-full bg-success/60 backdrop-blur-sm mx-auto mb-4 w-fit border border-success/80 shadow-lg">
+                <Shield className="h-6 w-6 text-white drop-shadow-lg" />
               </div>
-              <h3 className="font-semibold text-white mb-2 drop-shadow-md filter brightness-110">Safe Reporting</h3>
-              <p className="text-white text-sm drop-shadow-sm filter brightness-105">Anonymous, secure incident reporting system</p>
+              <h3 className="font-bold text-white mb-2 text-lg drop-shadow-2xl">Safe Reporting</h3>
+              <p className="text-white font-semibold text-sm drop-shadow-xl">Anonymous, secure incident reporting system</p>
             </div>
             
-            <div className="glass-card text-center animate-scale-in hover:scale-105 transition-all duration-300" style={{animationDelay: '0.4s'}}>
-              <div className="p-3 rounded-full bg-warning/30 backdrop-blur-sm mx-auto mb-4 w-fit border border-warning/40">
-                <Users className="h-6 w-6 text-white" />
+            <div className="bg-white/25 backdrop-blur-lg border border-white/40 rounded-2xl p-6 text-center animate-scale-in hover:scale-105 transition-all duration-300 shadow-2xl" style={{animationDelay: '0.4s'}}>
+              <div className="p-3 rounded-full bg-warning/60 backdrop-blur-sm mx-auto mb-4 w-fit border border-warning/80 shadow-lg">
+                <Users className="h-6 w-6 text-white drop-shadow-lg" />
               </div>
-              <h3 className="font-semibold text-white mb-2 drop-shadow-md filter brightness-110">Smart Mentorship</h3>
-              <p className="text-white text-sm drop-shadow-sm filter brightness-105">AI-powered career guidance and mentorship</p>
+              <h3 className="font-bold text-white mb-2 text-lg drop-shadow-2xl">Smart Mentorship</h3>
+              <p className="text-white font-semibold text-sm drop-shadow-xl">AI-powered career guidance and mentorship</p>
             </div>
           </div>
         </div>
