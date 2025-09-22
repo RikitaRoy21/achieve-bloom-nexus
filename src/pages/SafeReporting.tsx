@@ -32,8 +32,17 @@ const SafeReporting = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-success/5 to-accent/5 p-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-success/5 to-accent/5 p-6 relative">
+      {/* Background Image */}
+      <div className="fixed inset-0 z-0">
+        <img 
+          src="/src/assets/safe-zone.jpg" 
+          alt="Safe Zone" 
+          className="w-full h-full object-cover opacity-5"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 to-background/90"></div>
+      </div>
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="p-4 rounded-full safety-gradient mx-auto mb-6 w-fit">

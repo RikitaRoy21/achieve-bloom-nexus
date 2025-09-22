@@ -317,4 +317,20 @@
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--primary-glow));
   }
+
+  /* Fix hover effects to prevent text blur */
+  .hover\:scale-105:hover,
+  .transition-all:hover,
+  .mouse-hover:hover {
+    filter: none !important;
+  }
+
+  /* Ensure text remains crisp during animations */
+  .glass-card:hover *,
+  .dashboard-card:hover *,
+  .professional-button:hover * {
+    filter: none !important;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
 }

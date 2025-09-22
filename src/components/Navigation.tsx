@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   GraduationCap, 
@@ -11,15 +12,25 @@ import {
   X,
   Globe,
   ArrowLeft,
-  Home
+  Home,
+  ChevronDown
 } from 'lucide-react';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState('English');
   const location = useLocation();
   const navigate = useNavigate();
   
   const isHomePage = location.pathname === '/';
+
+  const languages = [
+    { name: 'English', code: 'en' },
+    { name: 'हिंदी', code: 'hi' },
+    { name: 'اردو', code: 'ur' },
+    { name: 'कश्मीरी', code: 'ks' },
+    { name: 'डोगरी', code: 'doi' }
+  ];
 
   const navItems = [
     { name: 'Dashboard', icon: GraduationCap, href: '/dashboard' },
@@ -80,10 +91,26 @@ export const Navigation = () => {
               );
             })}
             <div className="flex items-center space-x-4 ml-6">
-              <Button variant="outline" size="sm" className="professional-button">
-                <Globe className="h-4 w-4 mr-2" />
-                हिंदी
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm" className="professional-button">
+                    <Globe className="h-4 w-4 mr-2" />
+                    {selectedLanguage}
+                    <ChevronDown className="h-3 w-3 ml-1" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-40">
+                  {languages.map((lang) => (
+                    <DropdownMenuItem 
+                      key={lang.code}
+                      onClick={() => setSelectedLanguage(lang.name)}
+                      className="cursor-pointer"
+                    >
+                      {lang.name}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button className="hero-gradient professional-button text-white">
                 Login
               </Button>
@@ -125,10 +152,26 @@ export const Navigation = () => {
               );
             })}
             <div className="pt-3 border-t border-border space-y-3">
-              <Button variant="outline" className="w-full hover:scale-105 transition-all duration-300">
-                <Globe className="h-4 w-4 mr-2" />
-                Switch Language
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="w-full hover:scale-105 transition-all duration-300">
+                    <Globe className="h-4 w-4 mr-2" />
+                    {selectedLanguage}
+                    <ChevronDown className="h-3 w-3 ml-1" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="center" className="w-40">
+                  {languages.map((lang) => (
+                    <DropdownMenuItem 
+                      key={lang.code}
+                      onClick={() => setSelectedLanguage(lang.name)}
+                      className="cursor-pointer"
+                    >
+                      {lang.name}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button className="w-full hero-gradient hover:scale-105 transition-all duration-300">
                 Login to Platform
               </Button>

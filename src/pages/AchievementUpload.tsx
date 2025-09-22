@@ -31,8 +31,17 @@ const AchievementUpload = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-6">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-background p-6 relative">
+      {/* Background Image */}
+      <div className="fixed inset-0 z-0">
+        <img 
+          src="/src/assets/achievement-success.jpg" 
+          alt="Achievement Success" 
+          className="w-full h-full object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/95"></div>
+      </div>
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">Upload Achievement</h1>
