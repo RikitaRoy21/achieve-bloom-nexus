@@ -42,13 +42,13 @@ export const StatsSection = () => {
               <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 mx-auto mb-4 w-fit shadow-lg backdrop-blur-sm border border-primary/20">
                 <stat.icon className="h-8 w-8 text-primary" />
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2 drop-shadow-sm">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2 hero-text-shadow">
                 {stat.number}
               </div>
-              <div className="text-xl font-semibold text-foreground mb-1 drop-shadow-sm">
+              <div className="text-xl font-semibold text-foreground mb-1 hero-text-shadow">
                 {stat.label}
               </div>
-              <div className="text-muted-foreground text-sm font-medium">
+              <div className="text-muted-foreground text-sm font-medium hero-text-shadow">
                 {stat.description}
               </div>
             </div>

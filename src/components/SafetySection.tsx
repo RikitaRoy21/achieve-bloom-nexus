@@ -14,7 +14,7 @@ export const SafetySection = () => {
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 drop-shadow-sm">
             Safe Space for Everyone
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 font-medium">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 font-medium hero-text-shadow">
             Anonymous reporting system designed to encourage and protect students, 
             especially supporting girls' education and safety
           </p>

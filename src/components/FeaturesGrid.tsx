@@ -87,13 +87,13 @@ export const FeaturesGrid = () => {
     <section id="features" className="py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 hero-text-shadow">
             Comprehensive Educational
-            <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="block text-gradient-enhanced">
               Management Platform
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto hero-text-shadow">
             Everything you need for modern, secure, and inclusive education management
           </p>
         </div>
@@ -114,7 +114,7 @@ export const FeaturesGrid = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-muted-foreground mb-6 leading-relaxed font-medium">
+                <p className="text-muted-foreground mb-6 leading-relaxed font-medium hero-text-shadow">
                   {feature.description}
                 </p>
                 <Button 
@@ -132,20 +132,20 @@ export const FeaturesGrid = () => {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="dashboard-card text-center hover:scale-105 transition-all duration-300">
             <Lock className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-foreground">Enterprise Security</h3>
-            <p className="text-muted-foreground font-medium">SSL encryption, RBAC, GDPR compliance with complete audit trails</p>
+            <h3 className="text-xl font-semibold mb-3 text-foreground hero-text-shadow">Enterprise Security</h3>
+            <p className="text-muted-foreground font-medium hero-text-shadow">SSL encryption, RBAC, GDPR compliance with complete audit trails</p>
           </div>
           
           <div className="dashboard-card text-center hover:scale-105 transition-all duration-300">
             <Headphones className="h-12 w-12 text-success mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-foreground">24/7 Support</h3>
-            <p className="text-muted-foreground font-medium">SMS alerts for low connectivity regions with offline support</p>
+            <h3 className="text-xl font-semibold mb-3 text-foreground hero-text-shadow">24/7 Support</h3>
+            <p className="text-muted-foreground font-medium hero-text-shadow">SMS alerts for low connectivity regions with offline support</p>
           </div>
           
           <div className="dashboard-card text-center hover:scale-105 transition-all duration-300">
             <Users className="h-12 w-12 text-accent mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-foreground">Faculty Tools</h3>
-            <p className="text-muted-foreground font-medium">Digital training, analytics for pedagogy and management efficiency</p>
+            <h3 className="text-xl font-semibold mb-3 text-foreground hero-text-shadow">Faculty Tools</h3>
+            <p className="text-muted-foreground font-medium hero-text-shadow">Digital training, analytics for pedagogy and management efficiency</p>
           </div>
         </div>
       </div>

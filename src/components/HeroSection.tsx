@@ -31,17 +31,19 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-up">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl filter brightness-110">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight hero-text-enhanced">
             Secure Educational
-            <span className="block bg-gradient-to-r from-accent to-primary-glow bg-clip-text text-transparent drop-shadow-lg filter brightness-125">
+            <span className="block text-gradient-enhanced">
               Excellence Platform
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-semibold filter brightness-110">
+          <div className="hero-description-enhanced mb-12 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white leading-relaxed font-semibold">
             Blockchain-verified achievements, real-time analytics, safe reporting, 
             and comprehensive student development - all in one secure platform.
-          </p>
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Button 
@@ -80,24 +82,24 @@ export const HeroSection = () => {
               <div className="p-3 rounded-full bg-accent/60 backdrop-blur-sm mx-auto mb-4 w-fit border border-accent/80 shadow-lg">
                 <Award className="h-6 w-6 text-white drop-shadow-lg" />
               </div>
-              <h3 className="font-bold text-white mb-2 text-lg drop-shadow-2xl">Verified Achievements</h3>
-              <p className="text-white font-semibold text-sm drop-shadow-xl">Blockchain-secured certificates and portfolios</p>
+              <h3 className="font-bold text-white mb-2 text-lg card-text-enhanced">Verified Achievements</h3>
+              <p className="text-white font-semibold text-sm hero-text-shadow">Blockchain-secured certificates and portfolios</p>
             </div>
             
             <div className="bg-white/25 backdrop-blur-lg border border-white/40 rounded-2xl p-6 text-center animate-scale-in hover:scale-105 transition-all duration-300 shadow-2xl" style={{animationDelay: '0.2s'}}>
               <div className="p-3 rounded-full bg-success/60 backdrop-blur-sm mx-auto mb-4 w-fit border border-success/80 shadow-lg">
                 <Shield className="h-6 w-6 text-white drop-shadow-lg" />
               </div>
-              <h3 className="font-bold text-white mb-2 text-lg drop-shadow-2xl">Safe Reporting</h3>
-              <p className="text-white font-semibold text-sm drop-shadow-xl">Anonymous, secure incident reporting system</p>
+              <h3 className="font-bold text-white mb-2 text-lg card-text-enhanced">Safe Reporting</h3>
+              <p className="text-white font-semibold text-sm hero-text-shadow">Anonymous, secure incident reporting system</p>
             </div>
             
             <div className="bg-white/25 backdrop-blur-lg border border-white/40 rounded-2xl p-6 text-center animate-scale-in hover:scale-105 transition-all duration-300 shadow-2xl" style={{animationDelay: '0.4s'}}>
               <div className="p-3 rounded-full bg-warning/60 backdrop-blur-sm mx-auto mb-4 w-fit border border-warning/80 shadow-lg">
                 <Users className="h-6 w-6 text-white drop-shadow-lg" />
               </div>
-              <h3 className="font-bold text-white mb-2 text-lg drop-shadow-2xl">Smart Mentorship</h3>
-              <p className="text-white font-semibold text-sm drop-shadow-xl">AI-powered career guidance and mentorship</p>
+              <h3 className="font-bold text-white mb-2 text-lg card-text-enhanced">Smart Mentorship</h3>
+              <p className="text-white font-semibold text-sm hero-text-shadow">AI-powered career guidance and mentorship</p>
             </div>
           </div>
         </div>
